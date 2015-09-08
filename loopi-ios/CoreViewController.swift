@@ -18,6 +18,32 @@ class CoreViewController: UIViewController, ValidationDelegate, UITextFieldDeleg
 	var updateId: String!
 	var deleteId: String!
 	
+	// email UI
+	@IBOutlet weak var emailMessageLabel: UILabel!
+	@IBOutlet weak var emailTextField: UITextField!
+	
+	// first name UI
+	@IBOutlet weak var firstNameMessageLabel: UILabel!
+	@IBOutlet weak var firstNameTextField: UITextField!
+	
+	// last name UI
+	@IBOutlet weak var lastNameMessageLabel: UILabel!
+	@IBOutlet weak var lastNameTextField: UITextField!
+	
+	// zipcode UI
+	@IBOutlet weak var zipcodeMessageLabel: UILabel!
+	@IBOutlet weak var zipcodeTextField: UITextField!
+	
+	// password UI
+	@IBOutlet weak var passwordMessageLabel: UILabel!
+	@IBOutlet weak var passwordTextField: UITextField!
+	
+	// submit button UI and action
+	@IBOutlet weak var submitButton: UIButton!
+	@IBAction func submitButtonPressed(sender: UIButton) {
+		validator.validate(self)
+	}
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -26,7 +52,6 @@ class CoreViewController: UIViewController, ValidationDelegate, UITextFieldDeleg
 		// createUser()
 		// updateUser()
 		// deleteUser()
-		
 		self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "hideKeyboard"))
 		
 		validator.styleTransformers(success:{ (validationRule) -> Void in
@@ -46,12 +71,15 @@ class CoreViewController: UIViewController, ValidationDelegate, UITextFieldDeleg
 		})
 		
 		validator.registerField(emailTextField, errorLabel: emailMessageLabel, rules: [RequiredRule(), EmailRule()])
+		validator.registerField(firstNameTextField, errorLabel: firstNameMessageLabel, rules: [RequiredRule()])
+		validator.registerField(lastNameTextField, errorLabel: lastNameMessageLabel, rules: [RequiredRule()])
+		validator.registerField(zipcodeTextField, errorLabel: zipcodeMessageLabel, rules: [RequiredRule(), ZipCodeRule()])
+		validator.registerField(passwordTextField, errorLabel: passwordMessageLabel, rules: [RequiredRule()])
 		
 	}
 	
 	func validationSuccessful() {
 		println("Validation Success!")
-		// pass data to the createUser() method
 	}
 	
 	func validationFailed(errors:[UITextField:ValidationError]) {
@@ -60,13 +88,6 @@ class CoreViewController: UIViewController, ValidationDelegate, UITextFieldDeleg
 	
 	func hideKeyboard(){
 		self.view.endEditing(true)
-	}
-	
-	@IBOutlet weak var emailMessageLabel: UILabel!
-	@IBOutlet weak var emailTextField: UITextField!
-	@IBOutlet weak var submitButton: UIButton!
-	@IBAction func submitButtonPressed(sender: UIButton) {
-		validator.validate(self)
 	}
 	
 	// Create a user store, and look at how to make use of the Singleton Pattern

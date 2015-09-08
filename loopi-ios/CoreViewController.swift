@@ -74,7 +74,7 @@ class CoreViewController: UIViewController, ValidationDelegate, UITextFieldDeleg
 		validator.registerField(firstNameTextField, errorLabel: firstNameMessageLabel, rules: [RequiredRule()])
 		validator.registerField(lastNameTextField, errorLabel: lastNameMessageLabel, rules: [RequiredRule()])
 		validator.registerField(zipcodeTextField, errorLabel: zipcodeMessageLabel, rules: [RequiredRule(), ZipCodeRule()])
-		validator.registerField(passwordTextField, errorLabel: passwordMessageLabel, rules: [RequiredRule()])
+		validator.registerField(passwordTextField, errorLabel: passwordMessageLabel, rules: [RequiredRule(), PasswordRule()])
 		
 	}
 	

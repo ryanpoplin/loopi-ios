@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="GeH-sZ-JaB">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Core View Controller-->
+        <scene sceneID="mYw-db-goE">
+            <objects>
+                <viewController id="GeH-sZ-JaB" customClass="CoreViewController" customModule="loopi_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="p5o-BW-YgM"/>
+                        <viewControllerLayoutGuide type="bottom" id="pzz-Dd-VNk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="t9f-A0-GSk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qv9-eS-7JO">
+                                <rect key="frame" x="125" y="269" width="70" height="30"/>
+                                <state key="normal" title="Submit">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitButtonPressed:" destination="GeH-sZ-JaB" eventType="touchUpInside" id="awa-Yu-s6c"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GAK-1h-Irc">
+                                <rect key="frame" x="16" y="231" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PjJ-jJ-hiw">
+                                <rect key="frame" x="16" y="202" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GAK-1h-Irc" firstAttribute="leading" secondItem="t9f-A0-GSk" secondAttribute="leadingMargin" id="KOg-H6-4uw"/>
+                            <constraint firstItem="PjJ-jJ-hiw" firstAttribute="leading" secondItem="t9f-A0-GSk" secondAttribute="leadingMargin" id="MUP-ZL-F0z"/>
+                            <constraint firstItem="PjJ-jJ-hiw" firstAttribute="trailing" secondItem="t9f-A0-GSk" secondAttribute="trailingMargin" id="TDA-Vc-WsP"/>
+                            <constraint firstAttribute="centerY" secondItem="PjJ-jJ-hiw" secondAttribute="centerY" constant="71.5" id="TNl-Em-hQr"/>
+                            <constraint firstItem="Qv9-eS-7JO" firstAttribute="leading" secondItem="t9f-A0-GSk" secondAttribute="leadingMargin" constant="109" id="fcS-7Z-46G"/>
+                            <constraint firstItem="GAK-1h-Irc" firstAttribute="top" secondItem="PjJ-jJ-hiw" secondAttribute="bottom" constant="8" id="gAI-ov-kQe"/>
+                            <constraint firstItem="Qv9-eS-7JO" firstAttribute="top" secondItem="GAK-1h-Irc" secondAttribute="bottom" constant="8" id="jTp-hP-9O2"/>
+                            <constraint firstItem="PjJ-jJ-hiw" firstAttribute="top" secondItem="p5o-BW-YgM" secondAttribute="bottom" constant="182" id="oxV-62-UjP"/>
+                            <constraint firstItem="GAK-1h-Irc" firstAttribute="trailing" secondItem="t9f-A0-GSk" secondAttribute="trailingMargin" id="pjt-6i-vni"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Qv9-eS-7JO" secondAttribute="trailing" constant="109" id="v1p-kp-oef"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hmp-oE-6ud"/>
+                    <connections>
+                        <outlet property="emailMessageLabel" destination="PjJ-jJ-hiw" id="GFn-JE-Ady"/>
+                        <outlet property="emailTextField" destination="GAK-1h-Irc" id="3Y1-1e-JHm"/>
+                        <outlet property="submitButton" destination="Qv9-eS-7JO" id="uta-PW-bLH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Kt-s7-3oP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-319" y="-66"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

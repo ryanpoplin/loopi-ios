@@ -51,10 +51,7 @@ class CoreViewController: UIViewController, ValidationDelegate, UITextFieldDeleg
 	
 	func validationSuccessful() {
 		println("Validation Success!")
-		var alert = UIAlertController(title: "Success", message: "You are validated!", preferredStyle: UIAlertControllerStyle.Alert)
-		var defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-		alert.addAction(defaultAction)
-		self.presentViewController(alert, animated: true, completion: nil)
+		// pass data to the createUser() method
 	}
 	
 	func validationFailed(errors:[UITextField:ValidationError]) {
